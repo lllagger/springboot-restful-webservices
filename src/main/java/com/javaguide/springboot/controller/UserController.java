@@ -2,13 +2,18 @@ package com.javaguide.springboot.controller;
 
 import com.javaguide.springboot.dto.UserDto;
 import com.javaguide.springboot.entity.User;
+import com.javaguide.springboot.exception.ErrorDetails;
+import com.javaguide.springboot.exception.ResourceNotFoundException;
 import com.javaguide.springboot.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.concurrent.RecursiveTask;
 
 @RestController
 @AllArgsConstructor
@@ -49,4 +54,5 @@ public class UserController {
         userService.deleteUser(userId);
         return new ResponseEntity<>("Kullanıcı başarılı şekilde silindi", HttpStatus.OK);
     }
+
 }
