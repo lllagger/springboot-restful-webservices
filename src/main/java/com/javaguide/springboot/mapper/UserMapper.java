@@ -5,7 +5,7 @@ import com.javaguide.springboot.entity.User;
 
 public class UserMapper {
 
-    public static UserDto mapToUserDto(User user){
+    public static UserDto mapToUserDto(User user) {
         UserDto userDto = new UserDto(
                 user.getId(),
                 user.getFirstName(),
@@ -15,7 +15,7 @@ public class UserMapper {
         return userDto;
     }
 
-    public static User mapToUser(UserDto userDto){
+    public static User mapToUser(UserDto userDto) {
         User user = new User(
                 userDto.getId(),
                 userDto.getFirstName(),

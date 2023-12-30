@@ -18,7 +18,7 @@ public class UserDto {
     private String firstName;
     @NotEmpty(message = "Soy isim boş olamaz.")
     private String lastName;
-    @NotEmpty (message = "E-mail boş olamaz.")
+    @NotEmpty(message = "E-mail boş olamaz.")
     @Email(message = "E-mail geçersiz.")
     private String email;
 }

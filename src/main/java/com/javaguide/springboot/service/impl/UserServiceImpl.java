@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
         Optional<User> optionalUser = userRepository.findByEmail(userDto.getEmail());
 
-        if (optionalUser.isPresent()){
+        if (optionalUser.isPresent()) {
             throw new EmailAlreadyExistsException("Email Already Exists for User");
         }
 
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto getUserById(Long id) {
         User user = userRepository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("User","id", id)
+                () -> new ResourceNotFoundException("User", "id", id)
         );
 
 //        User user = optionalUser.get();
@@ -90,7 +90,7 @@ public class UserServiceImpl implements UserService {
     public void deleteUser(Long userId) {
 
         userRepository.findById(userId).orElseThrow(
-                () -> new ResourceNotFoundException("User","id", userId)
+                () -> new ResourceNotFoundException("User", "id", userId)
         );
 
         userRepository.deleteById(userId);

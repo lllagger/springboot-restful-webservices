@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Driver;
 import java.time.LocalDateTime;
 
 @Getter
@@ -18,6 +17,5 @@ public class ErrorDetails {
     private String message;
     private String path;
     private String errorCode;
-
 
 }
